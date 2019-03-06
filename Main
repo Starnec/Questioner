@@ -1,0 +1,55 @@
+def hello():
+
+    global name
+    global age
+    a = 0
+    print("Привет! Я помощник в самопознании :)                         **    **    **")           
+    print("                                                              **   **   **")
+    print("Version 1.0                                                    **********")
+    print("                                                                   **")
+    print("Разработчик: Ovchinnikov Alexey (c)                                **")
+    print("                                                                  ****")
+    name = input("\nКак Вас зовут? ")
+    while (a==0):
+        age  = input("Сколько Вам лет? ")
+        try:
+            age = int(age)
+            if (age<100)==True:
+                a=1
+            else:
+                print("\nНеверная команда")
+        except (ValueError, TypeError):
+            print("\nНеверная команда")    
+    
+hello()
+
+citata = [0]*50
+
+x = 0
+f = open(u'Вопросы.txt', 'r')
+for line in f:
+    b = f.readline()
+    citata[x] = b
+    x+=1
+  
+while (1==1):
+    from random import random
+    a = random()*50
+    a = int(a)
+    y = input("Еще вопросик? ")
+    if (y == "Да") or (y == "да") or (y == "ДА"):
+        print(citata[a])
+        answer = input("Ваш ответ: ")
+        try:
+            age = str(age)
+            filename = str(name + "." + age + ".txt")
+            with open(filename, 'a') as file:
+                print((citata[a] + "\n" + answer + "\n"), file=file, end='\n')
+            file.close
+        except:
+            age = str(age)
+            filename = str(name + "." + age + ".txt")
+            f = open(filename, 'w')
+            f.close        
+    else:
+        continue
